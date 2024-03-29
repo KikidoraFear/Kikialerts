@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: Kikialerts1
+## Author: Kikidora
+## Notes: plays sounds, select profiles with /kikialerts
+## Version: 1.0
+## SavedVariables: Kikialerts_profile
+
+Kikialerts.lua
