@@ -26,6 +26,8 @@ SlashCmdList["KIKIALERTS"] = function(msg)
       print("/kikialerts wow")
       print("/kikialerts headshot")
       print("/kikialerts cena")
+      print("/kikialerts quakef")
+      print("/kikialerts quakem")
     elseif cmd == "wow" then
         Kikialerts_profile = "wow"
         print("Selected Profile: wow")
@@ -35,13 +37,21 @@ SlashCmdList["KIKIALERTS"] = function(msg)
     elseif cmd == "cena" then
         Kikialerts_profile = "cena"
         print("Selected Profile: cena")
+    elseif cmd == "quakef" then
+        Kikialerts_profile = "quakef"
+        print("Selected Profile: quakef")
+    elseif cmd == "quakem" then
+        Kikialerts_profile = "quakem"
+        print("Selected Profile: quakem")
     end
 end
 
 local sounds = {
     wow = {path="Interface\\AddOns\\Kikialerts\\wow\\", amount=16},
     headshot = {path="Interface\\AddOns\\Kikialerts\\headshot\\", amount=4},
-    cena = {path="Interface\\AddOns\\Kikialerts\\cena\\", amount=1}
+    cena = {path="Interface\\AddOns\\Kikialerts\\cena\\", amount=1},
+    quakef = {path="Interface\\AddOns\\Kikialerts\\quakef\\", amount=15},
+    quakem = {path="Interface\\AddOns\\Kikialerts\\quakem\\", amount=25}
 }
 local player_health_perc_prev = 100
 
@@ -60,10 +70,10 @@ parser:SetScript("OnEvent", function()
   if event == "UNIT_HEALTH" then
     if arg1 == "player" then
       local player_health_perc = GetPlayerHealthPerc()
-      if (player_health_perc_prev > 20) and (player_health_perc < 20) then
-        PlaySoundFile("Interface\\AddOns\\Kikialerts\\grim\\1.mp3")
-      elseif (player_health_perc_prev > 10) and (player_health_perc < 10) then
+      if (player_health_perc_prev > 10) and (player_health_perc < 10) then
         PlaySoundFile("Interface\\AddOns\\Kikialerts\\grim\\2.mp3")
+      elseif (player_health_perc_prev > 20) and (player_health_perc < 20) then
+        PlaySoundFile("Interface\\AddOns\\Kikialerts\\grim\\1.mp3")
       end
       player_health_perc_prev = player_health_perc
     end

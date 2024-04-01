@@ -2,7 +2,7 @@
 ## Title: Kikialerts1
 ## Author: Kikidora
 ## Notes: plays sounds, select profiles with /kikialerts
-## Version: 1.0
+## Version: 1.1
 ## SavedVariables: Kikialerts_profile
 
 Kikialerts.lua
