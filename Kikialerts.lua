@@ -69,7 +69,7 @@ parser_sounds:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_SELF_BUFFS")
 parser_sounds:RegisterEvent("UNIT_HEALTH")
 
 parser_sounds:SetScript("OnEvent", function()
-  if event == "UNIT_HEALTH" then
+  if (Kikialerts_profile ~= "perimeter") and (event == "UNIT_HEALTH") then
     if arg1 == "player" then
       local player_health_perc = GetPlayerHealthPerc()
       if (player_health_perc_prev > 10) and (player_health_perc < 10) then
